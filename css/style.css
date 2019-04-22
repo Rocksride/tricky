@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes click-effect {
+  0% {
+    opacity: 1;
+    transform: scale(1); }
+  80% {
+    transform: scale(2); }
+  100% {
+    opacity: 0;
+    transform: scale(1); } }
+
+@keyframes cover-appear {
+  0% {
+    width: 0%; }
+  100% {
+    width: 30rem; } }
+
+@keyframes icon-appear {
+  0% {
+    transform: scale(0); }
+  80% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes rev-block {
+  0% {
+    left: 0;
+    width: 0%; }
+  50% {
+    left: 0;
+    width: 100%; }
+  100% {
+    left: 100%;
+    width: 0%; } }
+
+@keyframes text-appear {
+  0% {
+    opacity: 0;
+    width: 0; }
+  100% {
+    opacity: 1;
+    width: 30rem; } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7; }
+
+.link {
+  text-decoration: underline;
+  font-size: 1.7rem;
+  font-weight: 300;
+  text-transform: uppercase; }
+
+main {
+  background-color: rgba(186, 167, 151, 0.3);
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative; }
+  main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    animation: rev-block 2s ease-in-out;
+    background-color: rgba(186, 167, 151, 0.6); }
+  main::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    animation: rev-block 2s ease-in-out;
+    background-color: rgba(190, 234, 212, 0.8);
+    animation-delay: 1s; }
+
+.figure {
+  position: absolute; }
+  .figure--1 {
+    top: 5%;
+    left: 5%; }
+    .figure--1 .figure__img {
+      height: 40rem; }
+    .figure--1 .figure__caption {
+      color: #97bedd; }
+  .figure--2 {
+    top: 12%;
+    left: 38%; }
+    .figure--2 .figure__img {
+      height: 50rem; }
+    .figure--2 .figure__caption {
+      color: #8d745e; }
+  .figure--3 {
+    top: 16%;
+    left: 70%; }
+    .figure--3 .figure__img {
+      height: 40rem; }
+    .figure--3 .figure__caption {
+      color: #687d6e; }
+  .figure__img-cover {
+    position: absolute;
+    top: -1.5rem;
+    left: 1.5rem;
+    height: 50rem;
+    width: 30rem; }
+    .figure__img-cover::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 0%;
+      height: 100%;
+      animation: rev-block 1.5s ease-in-out forwards; }
+    .figure__img-cover--1 {
+      height: 40rem; }
+      .figure__img-cover--1::before {
+        background-color: #829787;
+        animation-delay: 0; }
+    .figure__img-cover--2 {
+      height: 50rem; }
+      .figure__img-cover--2::before {
+        background-color: #beead4;
+        animation-delay: 1s; }
+    .figure__img-cover--3 {
+      height: 40rem; }
+      .figure__img-cover--3::before {
+        background-color: #c89a56;
+        animation-delay: 2s; }
+  .figure__img {
+    height: 50rem;
+    width: 30rem;
+    filter: brightness(70%);
+    transform: scale(1);
+    transition: all 0.5s ease;
+    opacity: 0;
+    animation: text-appear 1s ease-in-out forwards; }
+    .figure__img--1 {
+      background: url(../img/joel-small.jpeg) no-repeat 50% 50%;
+      background-size: cover;
+      animation-delay: 0.2s; }
+    .figure__img--2 {
+      background: url(../img/sarah-small.jpeg) no-repeat 50% 50%;
+      background-size: cover;
+      animation-delay: 1.2s; }
+    .figure__img--3 {
+      background: url(../img/steven-small.jpeg) no-repeat 50% 50%;
+      background-size: cover;
+      animation-delay: 2.2s; }
+  .figure__caption {
+    position: absolute;
+    bottom: -2rem;
+    left: -5rem; }
+    .figure__caption--main {
+      font-size: 5rem;
+      font-weight: 700;
+      text-decoration: none;
+      margin-bottom: -2rem;
+      text-shadow: 0.3rem 0.3rem #ffffff;
+      transition: transform 1s ease-in-out, margin 0.3s ease; }
+    .figure__caption--sub {
+      opacity: 0.6;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 0.1rem;
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.3); }
+  .figure:focus {
+    outline: none; }
+  .figure:focus .figure__caption--main,
+  .figure:hover .figure__caption--main {
+    text-decoration: line-through;
+    margin-bottom: -1.8rem; }
+  .figure:focus .figure__caption--sub,
+  .figure:hover .figure__caption--sub {
+    letter-spacing: 0.3rem; }
+  .figure:focus .figure__img,
+  .figure:hover .figure__img {
+    filter: brightness(100%);
+    transform: scale(1.1); }
