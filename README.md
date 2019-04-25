@@ -1,2 +1,2 @@
 # Tricky Landing Page
-## check this out [&rarr;](http://music-landing-page.me/tricky/)
+## check this out [&rarr;](https://rocksride.github.io/tricky/)
